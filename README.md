@@ -29,25 +29,25 @@ INSTALLATION
 RUNNING dCLIP
 =============
 
-  Input:
+  Input
     -f1   The SAM format file of the first condition.
     -f2   The SAM format file of the second condition.
     -pair If the aligned SAM format files are from single-end experiments, leave this option unset. For paired-end files, set this option to the suffix of the names of forward reads and backward reads. For example, "F3,F5-RNA".
     -m1   The minimum number of tags for the first condition. All tags from both conditions are pooled, collapsed and overlapped to form clusters. Only clusters with at least m1 tags of the first condition or m2 tags of the second condition will be considered. Default: 5.
     -m2   The minimum number of tags for the second condition. Default: 5.
 
-  Directory:
+  Directory
     -temp The temporary directory to store intermediate files. Default: ".".
     -dir  The folder to store final output files. Default: ".".
   
-  Parameters:
+  Parameters
     -step The step size of profiling tag intensities. This controls the resolution of the Hidden Markov Model. Default: 5.
     -filter A filter value used for defining regions with significant binding in both conditions. A higher value will be more conservative in calling differential regions. Should be set >1. Default: 10.
     -mut  The mutant type(s) of the marker mutations. Can be any one or combination (separated by comma) of "T2C","T2A",...,"A2G","Del","Ins". For example, "T2C,A2G" will include T-to-C and A-to-G mutations as marker mutations. "all" will include all types of mutations. Default: "T2C".
     -max  The maximum number of iterations allowed for the Hidden Markov Model. Default: 10.
     -pre  The precision of the criterion for convergence. Default: 0.001.
   
-  Help:
+  Help
     -h    Print this help message.
 
 MORE DETAILS
