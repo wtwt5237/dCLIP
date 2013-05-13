@@ -30,24 +30,37 @@ RUNNING dCLIP
 =============
 
   Input
+    
     -f1   The SAM format file of the first condition.
+    
     -f2   The SAM format file of the second condition.
+    
     -pair If the aligned SAM format files are from single-end experiments, leave this option unset. For paired-end files, set this option to the suffix of the names of forward reads and backward reads. For example, "F3,F5-RNA".
+    
     -m1   The minimum number of tags for the first condition. All tags from both conditions are pooled, collapsed and overlapped to form clusters. Only clusters with at least m1 tags of the first condition or m2 tags of the second condition will be considered. Default: 5.
+    
     -m2   The minimum number of tags for the second condition. Default: 5.
 
   Directory
+    
     -temp The temporary directory to store intermediate files. Default: ".".
+    
     -dir  The folder to store final output files. Default: ".".
   
   Parameters
+    
     -step The step size of profiling tag intensities. This controls the resolution of the Hidden Markov Model. Default: 5.
+    
     -filter A filter value used for defining regions with significant binding in both conditions. A higher value will be more conservative in calling differential regions. Should be set >1. Default: 10.
+    
     -mut  The mutant type(s) of the marker mutations. Can be any one or combination (separated by comma) of "T2C","T2A",...,"A2G","Del","Ins". For example, "T2C,A2G" will include T-to-C and A-to-G mutations as marker mutations. "all" will include all types of mutations. Default: "T2C".
+    
     -max  The maximum number of iterations allowed for the Hidden Markov Model. Default: 10.
+    
     -pre  The precision of the criterion for convergence. Default: 0.001.
   
   Help
+    
     -h    Print this help message.
 
 MORE DETAILS
@@ -84,15 +97,21 @@ OUTPUT FORMAT
   2)  "dCLIP_output.txt" stores the detailed information of the raw data and Hidden Markov Model inference results at the resolution of the step bp. The first id column is an id number of the CLIP clusters. The chrom, strand and position specify the genomic location of each bin of step size. The next two columns, state and probability, specify the inference results of the Hidden Markov Model. The differential column is the normalized difference of the tag intensities between the two conditions. The last four column, tag1, mut1, tag2 and mut2, specify the total tag intensity and mutatant tag number of the two conditions in each bin.
 
   Note: For the state column, 
+    
     0 refers to a bin with more binding in condition 2 than condition 1
+    
     1 refers to a bin with equal binding in both conditions
+    
     2 refers to a bin with more binding in condition 1 than condition 2
 
   3)  "dCLIP_summary.bed" stores the summary of the inference results. Neighbouring bins in the same cluster with the same inference results are collapsed to be represented as one region in the BED file. The fourth column is the same id number as used in the dCLIP_output.txt file. The fifth column is the average binding strength of condition 1 in this continuous region if in state 2, the average binding strength of condition 2 if in state 0 and 0 if in state 1. I recommend to use this value for ranking regions with differential binding (state 0 and state 2 regions). This file can be uploaded to UCSC Genome Browser. 
 
   Note: For the color coding
+    
     Red bars are regions where condition 2 has stronger binding than condition 1
+    
     Green bars are regions with equal binding strength for both conditions 
+    
     Blue bars are regions where condition 1 has stronger binding than condition 2
 
 EXEMPLARY DATA
