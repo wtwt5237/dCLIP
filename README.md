@@ -60,7 +60,7 @@ MORE DETAILS
       167_570_1179_F3
       167_570_1179_F5-RNA
 
-      "F3" means forward strand and "F5-RNA" means backward strand, so the pair parameter should be set to F3,F5-RNA in this case. In other cases, the pair paramter may be set to 1,2 or other character strings. Sometimes, the aligner will trim the suffix. For example, "HWI-ST188:8:2217:5190:132924\#0/1" and "HWI-ST188:8:2217:5190:132924\#0/2" are one mate and certain aligners will only write "HWI-ST188:8:2207:5196:132923\#0" for both segments in the alignment file. In such cases, please set the suffix to "" and "" or "\#0" and "\#0". The point is to make the remaining part of the read names the same for a mate.
+   "F3" means forward strand and "F5-RNA" means backward strand, so the pair parameter should be set to F3,F5-RNA in this case. In other cases, the pair paramter may be set to 1,2 or other character strings. Sometimes, the aligner will trim the suffix. For example, "HWI-ST188:8:2217:5190:132924\#0/1" and "HWI-ST188:8:2217:5190:132924\#0/2" are one mate and certain aligners will only write "HWI-ST188:8:2207:5196:132923\#0" for both segments in the alignment file. In such cases, please set the suffix to "" and "" or "\#0" and "\#0". The point is to make the remaining part of the read names the same for a mate.
 
   2)  dCLIP treats paired-end sequencing data as fr-secondstrand by default (consult Tophat manul for definition). It can also handle fr-firststrand if you use opposite bases when specifying substitution mutations. For example, instead of specify T2C, you can use A2G. dCLIP cannot handle any other type of fr or any type of ff libraries.
 
