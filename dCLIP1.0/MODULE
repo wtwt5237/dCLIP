@@ -1,13 +1,20 @@
 Install Perl module for dCLIP
 =============================
 
-For running dCLIP, you need to install the Perl PDL module and PDL::Stats module, which could take 10-20 minutes. To install Perl modules, it would be best if you are administrator or you have a Perl version intalled under your own directory. Otherwise, asking your administrator to help install the module for you may be easier.
+For running dCLIP, you need to install the Perl PDL module and PDL::Stats module, which could take 5-10 minutes. To install Perl modules, it would be best if you are administrator or you have a Perl version intalled under your own directory. Otherwise, asking your administrator to help install the module for you may be easier.
 
 Perl			http://www.perl.org/get.html
 PDL			http://search.cpan.org/~chm/PDL-2.4.11/Basic/PDL.pm
 PDL::Stats		http://search.cpan.org/~maggiexyz/PDL-Stats-0.6.2/Stats.pm
 
-The following text will give you some advice on how to install Perl modules using PDL as an example.
+-----------------------------
+
+These two webpages have some very good advice on installation of PDL and PDL::Stats
+
+http://pdl.perl.org/?page=install
+http://pdl-stats.sourceforge.net/
+
+If that doesn't work for you, don't worry. Perl peopel always have more than one way to do it. Check out the following instructions... 
 
 -----------------------------
 
